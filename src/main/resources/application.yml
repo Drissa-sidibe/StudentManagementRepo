@@ -1,0 +1,49 @@
+spring:
+    application:
+      name: STUDENT-SERVICE
+      server:
+        port: 8000
+
+        zipkin:
+          base-url: http://localhost:9411/
+#  eureka://           removed from here because added to application.yml in git repo
+#    client:
+#      serviceUrl:
+#        defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+#    instance:
+#      hostname: localhost
+#      management:
+#        health:
+#          circuitbreakers:
+#            enabled: true
+#            endpoints:
+#              web:
+#                exposure:
+#                  include: health
+#                  endpoint:
+#                    health:
+#                      show-details: true
+#configserver// Removed from here because added to bootstrap.yml
+#spring:
+#  cloud:
+#    config:
+#      enabled: true
+#      uri: http://localhost:9296
+
+
+
+#resilience4j.circuitbreaker:
+#  instances:
+#    Department-service:
+#      registerHealthIndicator: true
+#      slidingWindowSize: 100
+#
+#    resilience4j:
+#       timelimiter:
+#         instances:
+#           Department-service:
+#             timeoutDuration: 2s
+#             cancelRunningFuture: true
+#           backendB:
+#             timeoutDuration: 1s
+#             cancelRunningFuture: false
